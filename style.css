@@ -1,0 +1,68 @@
+/* 1. The Body acts as a container for everything */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center;    /* Center horizontally */
+    min-height: 100vh;      /* Use 100% of the viewport height */
+    
+    /* Background & Text Colors */
+    background-color: #1a1a2e; /* A deep midnight blue */
+    color: #eabc41;           /* A vibrant coral/pink */
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Make the Timer huge */
+#timer {
+    font-size: 3rem; /* 'rem' scales based on font size (very big) */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 3. Style the Result text */
+#result {
+    font-size: 2.5rem;
+    color: #0f3460;
+    background: #ffffff; /* White box to make text pop */
+    padding: 15px 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+/* 4. The Button */
+button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #eabc41;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    background-color: #f9d46e;
+    transform: scale(1.05); /* Slight grow effect on hover */
+}
+
+/* The Animation Definition */
+@keyframes pop-out {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.025);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* This class will be applied via JavaScript */
+.animate-pop-out {
+    animation: pop-out 0.5s ease-out;
+}
