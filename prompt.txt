@@ -1,0 +1,3 @@
+Estou fazendo uma comparação entre mecanismos de busca, poderia gerar uma lista com o máximo que puder de pesquisas normais que brasileiros fariam?
+Misture os mais diversos temas como por exemplo, mas principalmente não se limitando a estes: esporte, culinária, universo geek, automóveis, preços imobiliários, pets, dúvidas de saúde, redes sociais e etc...
+Não enumere os itens e se possível coloque o resultado dentro de um bloco de código.
