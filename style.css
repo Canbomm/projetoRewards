@@ -49,6 +49,35 @@ button:hover {
     transform: scale(1.05); /* Slight grow effect on hover */
 }
 
+.title {
+    position: absolute;
+    top: 0px;
+}
+
+/* This container holds the links */
+.footer {
+    position: absolute;
+    bottom: 30px;
+    display: flex;         /* Puts items side-by-side */
+    gap: 20px;            /* Adds a specific 20px gap between the links */
+    margin-top: 60px;     /* Increases the distance from the button/timer */
+    justify-content: center; /* Ensures the group of links is centered */
+}
+
+.footer-link {
+    font-size: 1rem;
+    color: #eabc41;
+    text-decoration: none; /* Removes the default underline */
+    opacity: 0.75;
+    transition: opacity 0.3s, text-decoration 0.3s;
+}
+
+.footer-link:hover {
+    opacity: 1;
+    text-decoration: underline; /* Underline appears only on hover */
+    color: #f9d46e; /* Slightly brighter on hover */
+}
+
 /* The Animation Definition */
 @keyframes pop-out {
     0% {

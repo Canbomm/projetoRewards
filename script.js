@@ -1,5 +1,5 @@
 let database = [];
-let seconds = 1; // Starts paused
+let seconds = 0; // Starts paused
 let timerInterval = null;
 let isRunning = false;
 
@@ -35,16 +35,16 @@ function startTimer() {
 
   const runLogic = () => {
     seconds--;
-    timerDisplay.innerText = "Timer: " + seconds;
     if (seconds < 1 && database.length > 0) {
       seconds = 8;
       randomSearch(resultDisplay);
-
+      
       resultDisplay.classList.add('animate-pop-out');
       setTimeout(() => {
         resultDisplay.classList.remove('animate-pop-out');
       }, 500);
     }
+    timerDisplay.innerText = "Timer: " + seconds;
   };
 
   // Pause/continue button
