@@ -1,5 +1,6 @@
 let database = [];
 let seconds = 0; // Starts paused
+let total = 0; // Total suggestions made
 let timerInterval = null;
 let isRunning = false;
 
@@ -31,8 +32,9 @@ function userClipboard(text) {
 function showToast(message) {
     const toast = document.getElementById('toast');
     toast.innerText = message;
+    toast.className = 'toast-visible';
     setTimeout(() => {
-      toast.innerText = '‎';
+        toast.className = 'toast-hidden';
     }, 1000);
 }
 
@@ -42,12 +44,15 @@ function startTimer() {
   const resultDisplay = document.getElementById('result');
   const pausebtn = document.getElementById('toggleBtn');
   const searchbtn = document.getElementById('result');
+  const counter = document.getElementById('counter');
 
   const runLogic = () => {
     seconds--;
     if (seconds < 1 && database.length > 0) {
       seconds = 8;
+      total += 1;
       searchbtn.innerText = randomSearch(resultDisplay);
+      counter.innerText = "Total: " + total;
       
       resultDisplay.classList.add('animate-pop-out');
       setTimeout(() => {

@@ -16,7 +16,7 @@ body {
 }
 
 /* 2. Make the Timer huge */
-#timer {
+#timer, #counter {
     font-size: 3rem; /* 'rem' scales based on font size (very big) */
     font-weight: bold;
     margin-bottom: 20px;
@@ -97,8 +97,29 @@ body {
 }
 
 #toast {
-    top: 100px;
+    position: fixed;
+    bottom: 100px;           /* Distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Perfectly centers a fixed element */
     background-color: #333;
     color: #fff;
-    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;          /* Ensures it stays on top of everything */
+    transition: opacity 0.4s, transform 0.4s;
+}
+
+/* Hidden state */
+.toast-hidden {
+    opacity: 0;
+    pointer-events: none;   /* Prevents clicking it when invisible */
+    transform: translate(-50%, 20px) !important; /* Slid down slightly */
+}
+
+/* Visible state */
+.toast-visible {
+    opacity: 1;
+    transform: translate(-50%, 0) !important;
 }
