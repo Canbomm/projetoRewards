@@ -15,7 +15,7 @@ function randomSearch(resultDisplay) {
   const randomIndex = Math.floor(Math.random() * database.length);
   const randomItem = database[randomIndex];
   resultDisplay.innerText = randomItem.search;
-  userClipboard(randomItem.search);
+  return randomItem.search;
 }
 
 // Copy to user's clipboard
@@ -27,17 +27,27 @@ function userClipboard(text) {
   });
 }
 
+// Small notification
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.innerText = message;
+    setTimeout(() => {
+      toast.innerText = '‎';
+    }, 1000);
+}
+
 // Changes the suggestion after 8 seconds
 function startTimer() {
   const timerDisplay = document.getElementById('timer');
   const resultDisplay = document.getElementById('result');
-  const btn = document.getElementById('toggleBtn');
+  const pausebtn = document.getElementById('toggleBtn');
+  const searchbtn = document.getElementById('result');
 
   const runLogic = () => {
     seconds--;
     if (seconds < 1 && database.length > 0) {
       seconds = 8;
-      randomSearch(resultDisplay);
+      searchbtn.innerText = randomSearch(resultDisplay);
       
       resultDisplay.classList.add('animate-pop-out');
       setTimeout(() => {
@@ -48,15 +58,21 @@ function startTimer() {
   };
 
   // Pause/continue button
-  btn.addEventListener('click', () => {
+  pausebtn.addEventListener('click', () => {
     if (isRunning) {
       clearInterval(timerInterval);
-      btn.innerText = "Iniciar"; // Start
+      pausebtn.innerText = "Iniciar"; // Start
     } else {
       timerInterval = setInterval(runLogic, 1000);
-      btn.innerText = "Pausar"; // Pause
+      pausebtn.innerText = "Pausar"; // Pause
     }
     isRunning = !isRunning;
+  });
+
+  // Manual copy search
+  searchbtn.addEventListener('click', () => {
+    userClipboard(searchbtn.innerText);
+    showToast("Copiado!");
   });
 }
 
