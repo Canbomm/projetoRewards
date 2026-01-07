@@ -56,7 +56,7 @@ function startTimer() {
       seconds = 8;
       total += 1;
       searchbtn.innerText = randomSearch(resultDisplay);
-      counter.innerText = "Total: " + total;
+      counter.innerText = "Sugestões feitas: " + total;
       
       resultDisplay.classList.add('animate-pop-out');
       setTimeout(() => {
