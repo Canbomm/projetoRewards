@@ -3,6 +3,7 @@ let seconds = 0; // Starts paused
 let total = 0; // Total suggestions made
 let timerInterval = null;
 let isRunning = false;
+const simpleBeep = new Audio('beep.mp3');
 
 // Loads database
 async function loadData() {
@@ -16,6 +17,9 @@ function randomSearch(resultDisplay) {
   const randomIndex = Math.floor(Math.random() * database.length);
   const randomItem = database[randomIndex];
   resultDisplay.innerText = randomItem.search;
+  // Small sound feedback
+  simpleBeep.currentTime = 0; 
+  simpleBeep.play();
   return randomItem.search;
 }
 

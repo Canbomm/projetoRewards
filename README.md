@@ -1,3 +1,6 @@
-# Aviso
-Parece que a microsoft está com problemas com relação a resgates, o pedido fica `Em andamento` por 24hrs e depois é recusado.   
-Isso pode ser algum problema por parte deles, mas também há a possibilidade de ser uma leva de [shadow ban](https://wikipedia.org/wiki/Shadow_banning). Por esse motivo resolvi desativar o site por enquanto.
+# O que é
+Um site bem simples que copia pesquisas automaticamente para sua área de transferência a cada **8s**.  
+O intuito é ser um auxiliar de pesquisas para aqueles que usam o microsoft rewards.
+
+# Suporte
+Quem quiser me ajudar pode estar fazendo as pesquisas pelo [meu link de afiliado do rewards.](https://rewards.bing.com/welcome?rh=2335660F&ref=rafsrchae&form=ML2XE3&OCID=ML2XE3&PUBL=RewardsDO&CREA=ML2XE3)
